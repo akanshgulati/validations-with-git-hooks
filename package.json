@@ -1,0 +1,10 @@
+{
+  "name": "git-hooks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Akansh Gulati <akanshgulati@gmail.com>",
+  "scripts": {
+    "postinstall": "cp -r git-hooks/* .git/hooks; chmod u+x .git/hooks/*"
+  },
+  "license": "MIT"
+}

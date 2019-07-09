@@ -1,0 +1,14 @@
+#! /usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+const checkBranch = require('../../scripts/git-validations').validateBranch;
+
+const ref = fs.readFileSync(path.resolve(__dirname, '../HEAD'),  {encoding: 'utf-8'});
+let isValid = true;
+
+if (ref) {
+    const branch = ref.split('/')[2];
+    isValid = checkBranch(branch);
+}
+process.exit(isValid ? 0 : 1);
