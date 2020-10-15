@@ -1,0 +1,18 @@
+#! /usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+const gitScript = require('../../scripts/git-script')
+
+const ref = fs.readFileSync(path.resolve(__dirname, '../HEAD'),  {encoding: 'utf-8'});
+let isValid = true;
+
+if (ref) {
+    const branch = ref.split('/')[2].trim();
+    isValid = gitScript.validateBranch(branch);
+
+    if (!isValid) {
+        console.error('\nRead about branch name convention at https://git.ixigo.com/UI/node-ui/-/tree/development/docs/commit-message-and-branch.md');
+    }
+}
+process.exit(isValid ? 0 : 1);
