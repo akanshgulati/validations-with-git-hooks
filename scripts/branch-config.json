@@ -1,0 +1,18 @@
+{
+  "maxLength": 60,
+  "minLength": 10,
+  "types": [
+    "docs",
+    "feat",
+    "fix",
+    "perf",
+    "release",
+    "refactor",
+    "test"
+  ],
+  "scopes": [],
+  "branchRegex": "^(\\w+)(?:[-_](JIRA-[\\d]{5}))?(?:[-_](.+))?$",
+  "bypassRegex": "^(hotfix|development)",
+  "issueRegex": "(JIRA-[\\d]{5})",
+  "isBranchValidationEnabled": true
+}

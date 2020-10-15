@@ -1,0 +1,10 @@
+#! /usr/bin/env node
+'use strict';
+const prepareCommit = require('../../scripts/git-script').prepareCommit;
+const path = require("path");
+
+(async function() {
+    const headFilePath = path.resolve(__dirname, '../HEAD');
+    await prepareCommit(process.argv[2], headFilePath);
+    process.exit(0);
+})();

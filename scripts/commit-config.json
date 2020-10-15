@@ -1,0 +1,23 @@
+{
+  "maxLength": 100,
+  "types": [
+    "build",
+    "ci",
+    "docs",
+    "feat",
+    "fix",
+    "perf",
+    "refactor",
+    "release",
+    "style",
+    "test",
+    "chore"
+  ],
+  "scopes": [],
+  "msgRegex": "^(\\w+)(?:-(JIRA-[\\d]{5}))?(?:\\((.+)\\))?: (.+)$",
+  "fixupSquashRegex": "^(fixup|squash)!",
+  "bypassRegex": "^(revert:?|merge)",
+  "isAppendJiraIdEnabled": true,
+  "isCommitValidationEnabled": true,
+  "doc": "https://github.com/akanshgulati/validations-with-git-hooks/blob/master/README.md"
+}
